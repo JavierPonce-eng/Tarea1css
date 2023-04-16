@@ -2,6 +2,43 @@
     box-sizing: border-box;
 }
 
+.grid-container{
+    display: grid;
+    background-color: #120c32;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+}
+
+.grid-container div{
+    background-color:  #191970;
+    text-align: center;
+    color: white;
+    border: 1px solid black;
+}
+
+.grid-container aside.left{
+    justify-content: center;
+    border: 2px solid black;
+    text-align: justify;
+    font-size: 23px;
+    background-color: black;
+    border: 5px solid;
+    color: white;
+    padding: 10px;
+}
+
+.grid-container aside.right{
+    justify-content: center;
+    border: 2px solid black;
+    text-align: justify;
+    font-size: 23px;
+    background-color: black;
+    border: 5px solid;
+    color: white;
+    padding: 10px;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -9,7 +46,7 @@ body{
     background: linear-gradient(#120c32, #191970);
 }
 
-img{
+img.logo{
     float: left;
   }
 
@@ -22,7 +59,7 @@ header{
 nav{
     display: flex;
     flex-direction: row;
-    background-color:silver;
+    background-color: royalblue;
 }
 
 nav a:hover:not(.active){
@@ -40,8 +77,9 @@ nav a{
 }
 
 .row{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: auto autoS;
 }
 
 aside{
