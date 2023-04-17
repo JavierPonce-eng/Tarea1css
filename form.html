@@ -6,7 +6,88 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body style="background-image: url(img/backgorund.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="grid-container">
+            <header class="header-container">
+                <div>
+                    <img class="logo" src="img/logo.jpg">
+                </div>
+                 <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="register.html">Login</a>
+                </nav>
+            </header>
+            <aside class="left" style="display: grid; grid-row-gap: 10px; border: 0; background-color: black; visibility: hidden;">
+                <div style="grid-row: 1; border: 2px solid black; background-color: black; border: 5px solid black; text-align: center; padding: 10px; width: 300px;">
+                    <img class="medio" src="img/inspiracion.jpg" style="width: auto; border: 1px solid black; margin: auto; width: 180px; height: 180px;"><br>
+                    <p>Lost Ark is a massively multiplayer online role-playing game (MMORPG) that has taken the gaming world by storm since its release in 2018. The game is developed by Smilegate RPG, and it has gained a massive following due to its immersive gameplay, stunning graphics, and engaging storyline. If you are looking for a game that will keep you hooked for hours on end, then Lost Ark is definitely worth checking out.
+    
+                        One of the primary reasons why you should play Lost Ark is its immersive gameplay. The game offers a vast open world that you can explore, complete with numerous quests, dungeons, and raids. As you progress through the game, you will encounter a wide range of enemies, each with their unique abilities and weaknesses. You will need to learn to use your character's abilities and weapons strategically to defeat these enemies and progress through the game.
+                        
+                        Another reason why Lost Ark is worth playing is its stunning graphics. The game features some of the most beautiful and detailed graphics you will find in an MMORPG. From the intricate character designs to the vividly realized landscapes, Lost Ark is a visual feast for the eyes. Whether you are exploring the lush forests or battling fearsome monsters, the game's graphics will immerse you in its world.</p>
+                </div>
+                <!-- <div style="grid-row: 2; border: 2px solid black; background-color: black; border: 5px solid black; text-align: center; padding: 10px; display: none;">
+                    <p>tu vieja</p>
+                </div> -->
+            </aside>
+                <div style="text-align: center;">
+                    <form class="register" autocomplete="off" target="_self" method="post">
+                        <fieldset>
+                            <legend>Registro de Usuario</legend><br>
+
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" name="nombre" id="nombre" required><br>
+                            <label for="apellidos">Apellidos: </label>
+                            <input type="text" name="apellidos" id="apellidos" required><br>
+                            <label for="usuario">Usuario: </label>
+                            <input type="text" name="usuario" id="usuario" required><br>
+                            <label for="contraseña">Contraseña: </label>
+                            <input type="password" name="contraseña" id="password" required><br>
+                            <label for="correo">Correo: </label>
+                            <input type="email" name="correo" id="correo" required><br>
+                            <label for="fecha nacimiento">Fecha de Nacimiento: </label>
+                            <input type="date" name="fecha" id="fecha" required><br>
+                            <label for="sexo">Sexo: </label>
+                            <input type="radio" name="sexo" value="Hombre">Hombre
+                            <input type="radio" name="sexo" value="Mujer">Mujer
+                            <br>
+                            <label for="Region">Region: </label>
+                            <select name="Region" id="region">
+                                <option value="Blank"></option>
+                                <option value="Norteamerica">Norteamerica</option>
+                                <option value="Sudamerica">Sudamerica</option>
+                                <option value="Europa occidental">Europa occidental</option>
+                                <option value="Europa oriental">Europa oriental</option>
+                                <option value="Asia">Asia</option>
+                                </select>  
+                            <br>
+                            <label for="Gear score">Gear score (nivel de equipamiento):</label>
+                            <input type="number" name="gear score" id="gs">
+                            <br>
+                            <button type="submit">Registrarse</button><br>
+                                <p>Ya tengo una cuenta,<a href="register.html">Iniciar sesion.</a></p>
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            <aside class="right" style="visibility: hidden;">
+                <img src="img/arcana.png" style="width: auto; border: 1px solid black; margin: auto; width: 180px; height: 180px;">
+                <p style="text-align: center; font-size: 15px;">Gianni "Giarock" Arcana</p>
+                <img src="img/summoner.png" style="width: auto; border: 1px solid black; margin: auto; width: 180px; height: 180px;">
+                <p style="text-align: center; font-size: 15px;">Francisco "SummonPerkin" Summoner</p>
+                <img src="img/glaivier.png" style="width: auto; border: 1px solid black; margin: auto; width: 180px; height: 180px;">
+                <p style="text-align: center; font-size: 15px;">Javier "GMPoledancer" Glaivier</p>
+            </aside>
+            <footer>
+                <p>
+                    todos los derechos reservados
+                </p>
+            </footer>
+        </div>
+        
+    </body>
+    <!-- <body>
         <header>
         <nav>
             <table>
@@ -97,5 +178,5 @@
                 <a href="correo:hege@example.com">javier.ponce.17@alumnos.uda.cl</a>
             </p>
         </pre>
-    </footer>
+    </footer> -->
 </html>
