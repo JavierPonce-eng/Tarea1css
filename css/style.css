@@ -38,12 +38,28 @@
     padding: 10px;
 }
 
+#asideleft{
+    grid-row: 1;
+    border: 2px solid black; 
+    background-color: black; 
+    border: 5px solid black; 
+    text-align: center; 
+    padding: 10px;
+    width: 300px;
+}
+
+.body{
+    background-image:url(img/background.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .grid-container article{
     justify-content: center;
     border: 2px solid black;
     text-align: justify; 
-    font-size: 20px; 
-    background-color: black; 
+    font-size: 20px;  
     border: 5px solid black; 
     color: white; 
     padding: 10px;
@@ -57,6 +73,11 @@ img.logo{
 img.medio{
     display: grid;
     justify-content: center;
+    width: auto; 
+    border: 1px solid black; 
+    margin: auto; width: 180px; 
+    height: 180px; 
+    align-items: center;
 }
 
 nav a:hover:not(.active){
@@ -102,20 +123,24 @@ nav {
 } 
 
 form{
-    position: relative;
     justify-items: center;
     z-index: 1;
     background: royalblue;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 3px auto 100px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-form.register{
+/* form.register{
     text-align: center;
-    margin: auto;
+    margin: 5px;
+    justify-content: right;
+} */
+
+input{
+    text-align: center;
     justify-content: center;
 }
 
@@ -127,4 +152,53 @@ h1{
 
 header, footer{
     grid-column: 1 / span 3;
+}
+
+.hidden{
+    visibility: hidden;
+    width: 300px;
+}
+
+.centro{
+    text-align: center;
+    grid-column: 1/span 3;
+}
+
+#alt{
+    grid-row: 1;
+    text-align: center;
+    grid-column: 1/span 3;
+}
+
+.ordenamiento{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contenido{
+    display: flex;
+    text-align: center;
+    float: none;
+    border: 2px solid goldenrod;
+    font-style: italic;
+    font-family:'Courier New', Courier, monospace;
+    background-color: black
+}
+
+#nosotros{
+    display: flex;
+    flex-direction: column;
+}
+
+#righty{    
+    margin-right: auto;
+    margin-left: 0;
+    padding: 2px;
+}
+
+#leftie{
+    margin-left: auto;
+    margin-right: 0;
+    padding: 2px;
 }
