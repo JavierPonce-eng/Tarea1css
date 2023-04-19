@@ -81,7 +81,8 @@ img.medio{
 }
 
 nav a:hover:not(.active){
-    background-color: slategrey;
+    background-color: #5af1f7;
+    transition: background-color 1s ease 0s;
 }
 
 nav a.active{
