@@ -19,3 +19,20 @@ img.medio{
     height: 180px; 
     align-items: center;
 }
+
+#nosotros{
+    display: flex;
+    flex-direction: column;
+}
+
+#righty{    
+    margin-right: auto;
+    margin-left: 0;
+    padding: 2px;
+}
+
+#leftie{
+    margin-left: auto;
+    margin-right: 0;
+    padding: 2px;
+}

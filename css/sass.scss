@@ -158,23 +158,6 @@ header, footer{
     background-color: black
 }
 
-#nosotros{
-    display: flex;
-    flex-direction: column;
-}
-
-#righty{    
-    margin-right: auto;
-    margin-left: 0;
-    padding: 2px;
-}
-
-#leftie{
-    margin-left: auto;
-    margin-right: 0;
-    padding: 2px;
-}
-
 @keyframes diamond-in-hesitate {
     0% {
       clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
