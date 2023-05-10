@@ -32,10 +32,12 @@ img.medio {
   gap: 10px;
 }
 .grid-container aside {
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
   justify-content: center;
   border: 2px solid black;
-  text-align: justify;
-  font-size: 20px;
   background-color: black;
   border: 5px solid;
   color: white;

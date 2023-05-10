@@ -1,4 +1,4 @@
-@import "background";
+@import "extras";
 
 @mixin fontStyle($fontsize){
     font-size: 25px;
@@ -20,10 +20,9 @@
     gap: 10px;
 
     aside{
-    justify-content: center;
+    @include fontStyle(20px);
+    @include centra();
     border: 2px solid black;
-    text-align: justify;
-    font-size: 20px;
     background-color: black;
     border: 5px solid;
     color: white;
