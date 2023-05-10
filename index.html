@@ -5,9 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/transition-style">
     </head>
     <body style="background-image: url(img/background.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div class="grid-container">
+        <div transition-style="in:diamond:hesitate">
+            <div class="grid-container">
             <header class="header-container">
                 <div class="logo-container">
                     <img class="logo" src="img/logo.jpg">
@@ -22,20 +24,20 @@
                 <div></div>
             </aside>
             <article style=" justify-content: center; text-align: center;">
-                <div style="border: 2px solid white;">
+                <div style="border: 2px solid white; background-color: black;">
                     <h1 style="font-size: 35px; text-align: center;">Video Aprovado por nuestros auspiciadores</h1>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/og2xUZ5ZeR8?autoplay=1&mute=1&loop=1" title="youtube video player" framebroder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <p style="text-align: center;font-size: 20px; justify-content: right;">
                     Un video de introduccion a unos de los mmorpg que esta arrasando con la comunidad durante este ultimo tiempo.
                     </p>
                 </div><br>
-                <div style="border: 2px solid white;">
+                <div style="border: 2px solid white; background-color: black;">
                     <img src="img/logo616x353.jpg" alt="Que Buen Juego" width="550px" height="320px">
                     <p style="text-align: center;font-size: 20px; justify-content: center;">
                         Un excelente contendiente para aquellos titulos que han estado al frente del genero mmo por años, Lost Ark es un juego donde todo lo que necesitas es la convicion para seguir adelante...
                     </p>
                 </div><br>
-                <div style="border: 2px solid white;">
+                <div style="border: 2px solid white; background-color: black;">
                     <h1>¿Puedo jugar con Ustedes?</h1>
                     <p>
                         Claro, ¡me encantaría jugar Lost Ark contigo! Lost Ark es un emocionante MMORPG con un vasto mundo abierto para explorar, batallas desafiantes para pelear y numerosas clases para jugar.
@@ -56,6 +58,11 @@
                 </p>
             </footer>
         </div>
+
+
+        </div>
+        
+        
         
     </body>
 
