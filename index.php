@@ -1,3 +1,31 @@
+<?php require_once('conn.php'); // aca se requiere el archivo de conexion
+
+    // aca verificamos que las variables post tengan algun tipo de contenido
+    if (isset($_POST['userName']) AND isset($_POST['password'])) {
+        // realizamos la consulta a la base de datos y pedimos que nos seleccione todo de la tabla que conetnga tanto el usuario O el password
+        $sql = "SELECT * FROM USUARIOS WHERE usuario = '".$_POST['Username']."' OR password = '".$_POST['Password']."'";
+        $con = mysqli_query($conx, $sql);
+        $ls = mysqli_fetch_assoc($con); 
+
+        // VALIDACIONES
+        if ($_POST['userName'] == $ls['usuario'] AND $_POST['password'] == $ls['contra']) {
+            //si usuario que viene del formulario es igual al usuario que traemos de la consulta son iguales Y password del formulario es igual al password de la tabla 
+            // si los datos son correctos iniciamos seccion y lo dirigimos la pagina objetivo
+            session_start();
+            header('location:inicio.php');
+
+        }elseif ($_POST['userName'] != $ls['usuario'] AND $_POST['password'] == $ls['contra']) {
+            // si el suario del formulario NO es igual al de la tabla Y password del formulario es igual al password de la tabla 
+            echo "Tiene un error en el usuario verifique la informacion";
+        }elseif ($_POST['userName'] == $ls['usuario'] AND $_POST['password'] != $ls['contra']) {
+            // si el suario del formulario es igual al de la tabla Y password del formulario NO es igual al password de la tabla 
+            echo "El password es erroneo verifique la informacion";
+        }
+
+    }
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>

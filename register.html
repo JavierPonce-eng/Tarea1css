@@ -76,11 +76,13 @@
                 <div class="custom-box p-3">
                     <form id="register">  
                         <div class="container-form"> 
+
+                            <h1>Proceda a ingresar sus datos:</h1>
         
-                            <label for="nombre">*Nombre: </label>
+                            <label for="nombre">*Nombre : </label>
                             <input type="text" name="Name" id="nombre" required>
         
-                            <label for="apellidos">*Apellidos: </label>
+                            <label for="apellidos">*Apellido(Materno o Paterno) : </label>
                             <input type="text" name="lastname" id="apellidos" required>
         
                             <label for="usuario">*Username : </label>   
@@ -89,11 +91,14 @@
                             <label for="contraseña">*Password : </label>   
                             <input type="password" name="password" id="contraseña" required>  
         
-                            <label for="correo">*Correo: </label>
+                            <label for="correo">*Correo : </label>
                             <input type="email" name="mail" id="correo" required>
         
-                            <label for="fechanacimiento">*Fecha de Nacimiento: </label>
+                            <label for="fechanacimiento">*Fecha de Nacimiento : </label>
                             <input type="date" name="birthdate" id="fechanacimiento" required>
+
+                            <label for="usuario">*RUT(sin guión y con digito verificador) : </label>   
+                            <input type="text" name="rut" id="rut" required> 
         
                             <br><input type="checkbox" checked="checked"> ¿Desea recibir un correo con las ultimas noticias sobre La Roja?  
                             <br><br><button id="btnn" type="submit">Registrarse</button>    
