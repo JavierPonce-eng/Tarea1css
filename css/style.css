@@ -1,4 +1,4 @@
-.grid-container{
+/* .grid-container{
     font-size: 20px;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -202,4 +202,289 @@ header, footer{
     margin-left: auto;
     margin-right: 0;
     padding: 2px;
+} */
+
+#header {
+    background-color: #01242e;
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    height: 100px;
+}
+
+#header a{
+    color: white;
+}
+#header a:hover{
+    color: goldenrod;
+}
+
+/*contenido de la pag*/
+.custom-box {
+    background-color: #0a4f5f;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-box h5{
+    color: goldenrod;
+}
+
+.custom-box p{
+    color: white;
+    text-align: justify;
+}
+
+/*footer*/
+#pie-pagina{
+    background-color: #01242e;
+    color: white;
+}
+
+
+/* Animacion redes */
+.conteudo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#01242e;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    height: 50px;
+    width: 200px;
+}
+
+.conteudo::before,
+.conteudo::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    transition: 0.25s linear;
+    z-index: 1;
+}
+
+.conteudo::before {
+    content: "";
+    left: 0;
+    justify-content: flex-end;
+    background-color: goldenrod;
+}
+
+.conteudo::after {
+    content: "";
+    right: 0;
+    justify-content: flex-start;
+    background-color:#011b22;
+}
+
+.conteudo:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.conteudo:hover span {
+    opacity: 0;
+    z-index: -3;
+}
+
+.conteudo:hover::before {
+    opacity: 0.5;
+    transform: translateY(-100%);
+}
+
+.conteudo:hover::after {
+    opacity: 0.5;
+    transform: translateY(100%);
+}
+
+.conteudo span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    font-family: "Fira Mono", monospace;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+.conteudo .links__gerais {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.conteudo .links__gerais img {
+    text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
+    transform: scale(1);
+    width: 25px;
+    height: 25px;
+}
+
+.conteudo .links__gerais:hover {
+    background-color: rgba(218, 165, 32, 0.553);
+    animation: animacaoPulante 0.4s linear;
+}
+
+.article-container{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 30px;
+}
+
+
+
+@keyframes animacaoPulante {
+    40% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(0.8);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+/*clases para nosotros*/
+.nos{
+    background-color: rgb(110, 200, 255);
+}
+
+.nos_bor{
+    border: 1px solid #01242e;
+}
+
+.color_ese{
+    background-color: #01242e;
+}
+
+.nos_img{
+    width: 100%;
+    height: 100%;
+}
+
+.nos_carro_img{
+    height: 300px;
+}
+
+
+/*Carrosel*/
+.carousel-item {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel {
+    margin: 0 auto;
+}
+
+/*Tarjetas*/
+
+.col-lg-4{
+    background-color: #0a4f5f;
+    border: 5px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-marketing{
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+}
+
+.container-marketing h2{
+    font-size: 36px;
+    text-decoration: underline;
+    color: goldenrod;
+}
+
+.form-control:focus {
+    border-color: #8464ca;
+    box-shadow: 0 0 8px #beace3;
+}
+.contact-modal {
+    width: 600px;
+    padding: 50px;
+    margin: 30px auto;
+}
+.contact-modal h4 {
+    font-size: 26px;
+    display: inline-block;
+}
+.contact-modal .form-control, .contact-modal .btn  {
+    min-height: 38px;
+    border-radius: 1px;
+    outline: none;
+}
+.contact-modal .btn-primary {
+    min-width: 100px;
+    background: #0a4f5f;
+    border: none;
+}
+.contact-modal .btn-primary:hover {
+    background: goldenrod;
+}
+.contact-modal .btn-primary:focus {
+    box-shadow: 0 0 8px rgba(132, 100, 202, 0.6);
+}
+.contact-modal .btn-link {
+    color: #0a4f5f;
+}
+.contact-modal label {
+    opacity: 0.9;
+    font-weight: normal;
+    font-size: 95%;
+}
+.contact-modal textarea {
+    resize: vertical;
+}
+.contact-modal.modal-dialog {
+    width: 480px;
+}
+.contact-modal .modal-header {
+    padding: 20px 35px 14px;
+}
+.contact-modal .modal-content {
+    border-radius: 1px;
+}
+.contact-modal .close {
+    position: absolute;
+    right: 35px;
+    top: 25px;
+}
+.contact-modal .modal-body {
+    padding: 20px 35px 35px;
+}
+.hint-text {
+    opacity: 0.8;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
 }
