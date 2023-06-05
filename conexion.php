@@ -1,15 +1,14 @@
 <?php
-function conectar(){
-    $host="localhost";
-    $user="root";
-    $pass="";
+$server = "localhost";
+$user = "root";
+$password = "";
+$db = "Proyecto";
 
-    $bd="proyecto";
+$conexion = new mysqli($server, $user, $password, $db);
 
-    $con=mysqli_connect($host,$user,$pass);
+mysqli_select_db($conexion,$db);
 
-    mysqli_select_db($con,$bd);
-
-    return $con;
+if ($conexion->connect_errno) {
+    die("Conexión fallida: ".$conexion->connect_errno);
 }
 ?>

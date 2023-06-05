@@ -1,19 +1,14 @@
 <?php
+    session_start();
+    include_once "conexion.php";
 
-include("conexion.php");
+    $id = $_GET['id'];
 
-if (isset($_GET['delete'])) {
-    $rut = $_GET['delete'];
+    $sql = "DELETE FROM usuarios WHERE id = '$id'";
+    $query = mysqli_query ($conexion, $sql); 
 
-    $sql = "DELETE FROM 'usuarios' WHERE RUT=$rut";
-
-    if ($con->query($sql) === true) {
-        echo "Record deleted successfully.";
-    } else {
-        echo "Error deleting record: " . $con->error;
-    }
-}
-
-if($query){
-    Header("Location: inicio.php");
-}
+    if ($query) {
+        Header("Location:inicio.php");
+        exit();
+    } 
+?>

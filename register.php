@@ -1,8 +1,8 @@
 <?php
-    ob_start();
     session_start();
-    
+    include_once "conexion.php";
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -17,12 +17,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     </head>
     <body style="background-image: url(img/background.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
-            <nav id="header" class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a href="index.php">
-                        <img class="logo" src="img/logo.jpg">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+        <nav id="header" class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="index.php">
+                    <img class="logo" src="img/logo.jpg">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
                         aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +32,7 @@
                                 <a class="nav-link" aria-current="page" href="index.php" id="texto_nav">INICIO</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="nosotros.php" id="texto_nav">NOSOTROS</a>
+                                <a class="nav-link" href="Nosotros.php" id="texto_nav">NOSOTROS</a>
                             </li>
                                 <?php if (isset($_SESSION['usuario'])){?>
                                     <li class="nav-item">
@@ -43,13 +43,15 @@
                                     </li>
                                 <?php }else{?>
                             <li>
-                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal" id="texto_nav">LOGIN</a>
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal" id="texto_nav">
+                                    LOGIN
+                                </a>
                             </li>
-                            <?php }?>
+                                <?php }?>
                         </ul>
                     </div>
-                </div>
-            </nav>
+            </div>
+        </nav>
 
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -58,7 +60,7 @@
                             <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Logearse</h1>
                             
                         </div>
-                        <form action = "" method = "POST">
+                        <form action = "login.php" method = "POST">
                             <div class="modal-body container-form-modal">
                                 <div class="mb-3">
                                     <label class="form-label">Nombre de Usuario</label>
@@ -69,94 +71,60 @@
                                     <input type="password" placeholder="Enter Password" name="contraseña" required>
                                 </div>
                                 <div>
-                                    <button type="submit" name="login">Login</button>
+                                    <button id="sum" type="submit" name="login">Login</button>
                                     <br><input type="checkbox" checked="checked"> Recuerdame
                                 </div>
                                 <div>
                                     <p>¿No tienes cuenta?<a href="register.php">Registrate</a></p>
-                                    <a href="reset.php" id="exampleModalLabel" style="color: black;">Olvide mi contraseña</a>
+                                    <a href="recovery.php" id="exampleModalLabel" style="color: black;">Olvide mi contraseña</a>
                                 </div>
-
-                                <?php
-                                include('login.php');
-                                ?>
                             </div>
                         </form>
                     </div>
                 </div>
-         </div>
+            </div>
 
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="5000">
-            <img src="img/witcher_740x416.jpg" class="d-block w-100" alt="..." >
-            <div class="container">
-                <div class="carousel-caption">
-                  <h1>Evento The Witcher</h1>
-                  <p>Enlistate en una aventura con Geralt de rivia en este nuevo evento</p>
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="5000">
-            <img src="img/slide2.jpg" class="d-block w-100" alt="..." >
-            <div class="container">
-                <div class="carousel-caption">
-                  <h1>Nunca estas solo</h1>
-                  <p>Junta a tus amigos y lanzate a la aventura</p>
-                </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
     <div class="container p-3">
         <div class="row justify-content-center">
             <div class="col-8">
                 <div class="custom-box p-3">
-                    <h5>¿Puedo jugar con Ustedes?</h5>
-                    <p>
-                        Claro, ¡me encantaría jugar Lost Ark contigo! Lost Ark es un emocionante MMORPG con un vasto mundo abierto para explorar, batallas desafiantes para pelear y numerosas clases para jugar.
+                    <form id="register" action="insertar.php" method="POST">  
+                        <div class="container-form"> 
 
-                        ¿Estás interesado en unirte a mí en una aventura en este emocionante juego? Podemos unirnos y explorar juntos el vasto mundo de Lost Ark, luchar contra monstruos y jefes épicos, y competir en batallas PvP para ascender en las tablas de clasificación.
+                            <h1>Proceda a ingresar sus datos:</h1>
+        
+                            <label for="nombre">*Nombre : </label>
+                            <input type="text" name="nombre" id="nombre" required>
+        
+                            <label for="apellidos">*Apellido(Materno o Paterno) : </label>
+                            <input type="text" name="apellido" id="apellido" required>
+        
+                            <label for="usuario">*Username : </label>   
+                            <input type="text" name="username" id="usuario" required>  
+        
+                            <label for="contraseña">*Contraseña : </label>   
+                            <input type="password" name="contraseña" id="contraseña" required>  
+        
+                            <label for="correo">*Correo : </label>
+                            <input type="email" name="correo" id="correo" required>
+        
+                            <label for="fechanacimiento">*Fecha de Nacimiento : </label>
+                            <input type="date" name="fecha_nac" id="fecha_nac" required>
 
-                        Avísame si estás interesado y podemos programar un horario para jugar juntos. ¡Será una experiencia divertida y emocionante que no olvidaremos!
-                    </p><br>
-
-                    <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/og2xUZ5ZeR8?autoplay=1&mute=1&loop=1" title="youtube video player" framebroder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <p style="text-align: center;font-size: 20px; justify-content: right;">
-                        Un video que resume las divertidas actividades dentro del juego
-                        </p>
+                            <label for="rut">RUT : </label>   
+                            <input type="text" name="rut" id="rut" required> 
+        
+                            <br> 
+                            <br><br><button id="btnn" type="submit">Registrarse</button>
+        
+                        </div>   
+                    </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-marketing border-3">
-        <div class="row" style="margin: 20px;">
-            <div class="col-lg-4 rounded-5">
-                <img class="rounded-circle" src="img/1tarjeta.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Crea tu personaje</h2>
-                <p>Elige la clase que mas te guste, persoanliza tu personaje, sube de nivel, explora, conviertete en el heroe de tu propia historia</p>
-            </div>
-            <div class="col-lg-4 rounded-5">
-                <img class="rounded-circle" src="img/2tarjeta.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Coopera para cumplir tus metas</h2>
-                <p>Nadie puede lograrlo solo, deberias ajuntar a un equivo de valientes y honrados camaradas que te acompaen en esta aventura</p>
-            </div>
-            <div class="col-lg-4 rounded-5">
-                <img class="rounded-circle" src="img/3tarjeta.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Conquista esta nueva tierra</h2>
-                <p>Explora el nuevo mundo a todo su largo y ancho, hay tantos territorios sin explorar que podrias ser el primero en conquistar un terreno</p>
-            </div>
-    </div>
+    
     <footer id="pie-pagina" class="container-fluid p-3">
       <div class="row">
           <div class="col-4">

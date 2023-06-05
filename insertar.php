@@ -1,29 +1,21 @@
 <?php
+    session_start();
+    include_once "conexion.php";
 
-    include("conexion.php");
-
-
-    $sql="SELECT * FROM usuarios";
-    $query=mysqli_query($con,$sql);
-
-    $row=mysqli_fetch_array($query);
-
-    if (isset($_POST["btnEnviar"])){
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $contraseña = $_POST['contraseña'];
     $correo = $_POST['correo'];
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $fecha_nac = $_POST['fecha_nac'];
     $rut = $_POST['rut'];
 
-    $sql = "INSERT INTO 'usuarios' VALUES ('$nombre', '$apellido', '$username', '$password', '$correo', '$fecha_nacimiento', '$rut')";
+    $sql = "INSERT INTO usuarios VALUES ('','$nombre', '$apellido', '$username', '$contraseña', '$correo', '$fecha_nac', '$rut','')";
 
-    }
+    $query = mysqli_query ($conexion, $sql); 
 
-    if($query){
-        Header("Location: inicio.php");
-    }
-    
-
+    if ($query) {
+        Header("Location: index.php");
+        exit();
+    } 
 ?>

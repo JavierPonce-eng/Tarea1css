@@ -1,23 +1,26 @@
 <?php
+    session_start();
+    include_once "conexion.php";
 
-    include("conexion.php");
-   
+    $id = $_POST['id'];
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $username = $_POST['username'];
+    $contraseña = $_POST['contraseña'];
+    $correo = $_POST['correo'];
+    $fecha_nac = $_POST['fecha_nac'];
+    $rut = $_POST['rut'];
+    if(isset($_POST['is_admin'])){
+        $is_admin = 1;
+    }else{
+        $is_admin = 0;
+    }
 
-        $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $correo = $_POST['correo'];
-        $fecha_nacimiento = $_POST['fecha_nacimiento'];
-        $rut = $_POST['rut'];
+    $sql = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', username = '$username', contraseña = '$contraseña', correo = '$correo', fecha_nac = '$fecha_nac', rut='$rut', is_admin = '$is_admin' WHERE id = '$id'";
+    $query = mysqli_query ($conexion, $sql); 
 
-        $sql = "UPDATE 'usuarios' SET nombre='$nombre', apellido='$apellido', username='$username', password='$password',
-                correo='$correo', fecha_nacimiento='$fecha_nacimiento' WHERE RUT=$rut";
-
-        $query= mysqli_query($con,$sql);
-
-    if($query){
-        Header("Location: inicio.php");
+    if ($query) {
+        Header("Location:inicio.php");
+        exit();
     }
 ?>
